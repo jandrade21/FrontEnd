@@ -1,0 +1,47 @@
+<div class="container">
+<div class="titulo">
+  <div class="body overflow-hidden ">
+    <h5>Quien Soy</h5>
+    <table class="tabla text-light"  width="100%">
+      <tbody>
+        <tr *ngFor="let item of datatable">
+          <td width="4%"></td>
+          <td width="92%">
+                {{item.sobre_mi}}
+                <br>
+                <br>
+          </td> 
+          <td *ngIf="ulogged!=''" class="boton" width="4%" data-bs-toggle="modal" data-bs-target="#ModalSobreMi" (click)="onSetData(item)"><i class="far fa-edit fa-lg boton text-info"></i></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal -->
+
+  <div class="modal fade" id="ModalSobreMi" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+              <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Quien Soy</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+              <div>
+                  <div class="input-group">
+                      <span class="input-group-text">
+                          <i class="fas fa-book-reader fa-lg"></i>
+                      </span>
+                      <textarea type="text"  class="form-control" placeholder="sobre_mi" aria-label="With textarea" [(ngModel)]="persona.sobre_mi"></textarea>
+                    </div>
+              </div>
+              </div>
+              <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary"data-bs-dismiss="modal" (click)="onUpdatePersona(persona)">Aceptar</button>
+              </div>
+          </div>
+          </div>
+  </div>
+</div>

@@ -1,0 +1,94 @@
+.container-fluid{
+
+    background-color: rgb(36,28,71);
+    height: 110px;
+    border-bottom: rgb(112, 152, 124) 1px solid;
+    box-shadow: 0 0 5px #4f9;
+  }
+  #mainNav{
+    background-color:#838B8E;
+    height:110px;
+    padding: 0;
+    margin: 0;
+    left: 0;
+  }
+  ul{
+    position:relative;
+    display: flex;
+  }
+  ul li{
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    
+  }
+  ul li a{
+    position: relative;
+    top:0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.5em;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(4px);
+    z-index: 1;
+    box-shadow: 0 5px 45px rgba(0,0,0,0.1);
+    text-decoration: none;
+    overflow: hidden;
+    transition: top 0.5s, z-index 0.5s, transform 0.5s;
+    transition-delay: 0.5s, 0s, 0s;
+  }
+  ul li a:hover{
+    transition-delay: 0s,0.5s,0.5s;
+    top: -10px;
+    color: rgb(112, 152, 124);
+  }
+  ul li a:before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 100%;
+    background: rgba(255,255,255,0.5);
+    transform: skewX(45deg) translateX(150px);
+    transition: 0.5s;
+  }
+  ul li a:hover:before{
+    transform: skewX(45deg) translateX(-150px);
+  }
+  img {
+    width: 200px;
+    padding: 20px 30px;
+  
+  } 
+  .navbar-toggler{
+    right: 10px;
+    left: 40px;
+    margin: 40px;
+  }
+  h6{
+    font-size: 15px;
+    height: 10px;
+    color: #fff;
+  
+  }
+  @media (max-width: 400px) {
+    h6 { font-size: 0.7em; }
+  }
+  .btn{
+    background: rgb(112, 152, 124);
+    color: #fff;
+    border:1px solid #fff !important;
+    margin: 10px;
+  }
+  .button{
+    background: rgb(112, 152, 124)
+  }

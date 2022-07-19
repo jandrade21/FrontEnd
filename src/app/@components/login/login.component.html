@@ -1,0 +1,49 @@
+<div class="login">
+	<h1>Iniciar Sesión</h1>
+    <form method="post" [formGroup]="form">
+        <div>
+            <div class="input-group">
+                <span class="input-group-text">
+                    <i class="fas fa-user-circle"></i>
+                </span>
+                <input formControlName="username" class="form-control"
+                [ngClass]="{'is-invalid':Username?.errors && Username?.touched, 'is-valid': !Username?.hasError && Username?.touched}" 
+                type="text" name="u" placeholder="Usuario" required="required" [(ngModel)]="username"/>
+            </div>
+           
+            <div *ngIf="Username?.errors && Username?.touched">
+                <p *ngIf="Username?.hasError('required')" class="text-danger">
+                    El usuario es requerido
+                </p>
+                <p *ngIf="Username?.hasError('username')" class="text-danger">
+                    El formato de usuario debe ser válido
+                </p>
+            </div>
+        </div>
+        <br>
+    	<div>
+            <div class="input-group">
+                    <span class="input-group-text">
+                        <i class="fas fa-key"></i>
+                    </span>
+                <input  class="form-control" formControlName="password" type="password" name="p" placeholder="Contraseña" required="required" [(ngModel)]="password" />
+            </div>
+            <div *ngIf="Password?.errors && Password?.touched">
+                <p *ngIf="Password?.hasError('required')" class="text-danger">
+                    La contraseña es requerida
+                </p>
+                <p *ngIf="Password?.hasError('minlength')" class="text-danger" >
+                    La contraseña debe ser de 8 o más caracteres
+                </p>
+            </div>
+        </div>
+        <div class="text-danger">
+            {{loginerror}}
+        </div>
+        <br>
+        <div>
+            <button type="submit" class="btn btn-primary btn-block btn-large"(click)="login()">Enviar</button>
+        </div>
+        
+    </form>
+</div>

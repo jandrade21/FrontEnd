@@ -1,0 +1,141 @@
+
+   *{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+  }
+
+   body {
+    margin: auto;
+    background-color: rgb(36,28,71) !important;
+    width: 100%;
+   }
+
+
+  
+  /* burbujas */
+  .burbuja{
+    border-radius: 50%;
+    background: #fff;
+    opacity: .3;
+    position: absolute;
+    bottom: 0;
+    animation:  burbujas 3s linear infinite;
+    z-index: 3;
+  }
+  .burbuja:nth-child(1){
+    min-width: 10px;
+    min-height: 10px;
+    left: 5%;
+    animation-duration: 5s;
+  }
+  .burbuja:nth-child(2){
+    min-width: 40px;
+    min-height: 40px;
+    left: 10%;
+    animation-duration: 2s;
+  }
+  .burbuja:nth-child(3){
+    min-width: 25px;
+    min-height: 25px;
+    left: 25%;
+    animation-duration: 7s;
+  }
+  .burbuja:nth-child(4){
+    min-width: 45px;
+    min-height: 45px;
+    left: 35%;
+    animation-duration: 2.5s;
+  }
+  .burbuja:nth-child(5){
+    min-width: 35px;
+    min-height: 35px;
+    left: 50%;
+    animation-duration: 6s;
+  }
+  .burbuja:nth-child(6){
+    min-width: 10px;
+    min-height: 10px;
+    left: 65%;
+    animation-duration: 3s;
+  }
+  .burbuja:nth-child(7){
+    min-width: 25px;
+    min-height: 25px;
+    left: 75%;
+    animation-duration: 4s;
+  }
+  .burbuja:nth-child(8){
+    min-width: 35px;
+    min-height: 35px;
+    left: 85%;
+    animation-duration: 6s;
+  }
+  .burbuja:nth-child(9){
+    min-width: 15px;
+    min-height: 15px;
+    left: 95%;
+    animation-duration: 10s;
+  }
+  @keyframes burbujas{
+    0%{
+      bottom: 0;
+      opacity: 0;
+    }
+    50%{
+      opacity: .4;
+    }
+    100%{
+      bottom: 100vh;
+      opacity: 0;
+    }
+  }
+  .container { 
+    background:#e5e5e5; margin:2em auto; 
+    border-radius: 5em auto !important;
+    border:2px solid rgb(112, 152, 124) !important;
+    box-shadow: 0 0 15px #4f9;
+    background-color: rgb(123, 126, 156);
+    color: #fff;
+  }
+  
+  .titulo{
+    text-align: center;
+    margin-top: 5px;
+  }
+  .far{
+    cursor: pointer;
+  }
+  
+  .far-button,.fa {
+    color: black;
+    display: block;
+    height: 2.4rem;
+    width: 2.4rem;
+    line-height: 2.4rem;
+    text-align: center;
+    border-radius: 50%;
+    background: white;
+  }
+  /* .modal {
+    animation: ease-in-out aparecer 1s;
+}
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    85% {
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+  } */

@@ -1,0 +1,87 @@
+<div class="container ">
+    <div>
+        <h2 class="titulo">Experiencia</h2>
+    </div>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+          <div class="col" *ngFor="let exp of dataexp">
+            <table>
+              <tbody *ngIf="ulogged!=''">
+                  <th>&nbsp;</th>
+                  <th data-bs-toggle="modal"  data-bs-target="#modalExpCrear" class="boton"><i class="far fa-plus fa-lg boton text-Success m-1"></i></th>
+                  <th>&nbsp;</th>
+                  <th (click)="editarExperiencia(exp)"data-bs-toggle="modal"  data-bs-target="#modalExpCrear" class="boton"><i class="far fa-edit fa-lg boton text-info m-1"></i></th>
+                  <th>&nbsp;</th>
+                  <th (click)="onSetData(exp)"class="boton" ><i class="far fa-trash-alt fa-lg boton text-danger m-1"(click)="onDeleteExperiencia(exp.id)"></i></th>
+              </tbody>
+            </table>
+            <br>
+            <div class="card bg-transparent border">
+              <div class="caja">
+                <img src="{{exp.imagen}}" class="card-img-top" alt="..." style="max-width: 300px;">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">{{exp.empresa}}</h5>
+                <p class="card-text">{{exp.tipo_empleo.empleo_tipo}}</p>
+              </div>
+              <div class="card-header">
+                {{exp.descripcion}}
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Fecha desde: {{exp.fechaInicio| date: 'dd/MM/yyy'}}</li>
+                <li class="list-group-item">Fecha hasta: {{exp.fechaFin| date: 'dd/MM/yyy'}}</li>
+              </ul>
+            </div>
+      <br>
+      <!-- Modal Crear -->
+
+    <div class="modal fade" id="modalExpCrear" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+              <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Experiencia Laboral</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form [formGroup]="form" (ngSubmit)="agregarExperiencia()">
+                  <div class="input-group">
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon3">Empresa:</span>
+                      <input formControlName="empresa" type="text" class="form-control"  id="basic-url" aria-describedby="basic-addon3" >
+                    </div>
+                    <div class="input-group mb-3" formGroupName="tipo_empleo">
+                      <span class="input-group-text" id="basic-addon3">Tipo de Empleo:</span>
+                      <select class="form-control" aria-label="Default select example"formControlName="id">
+                        <option  *ngFor="let tipo of tipoexperiencia" [value]="tipo.id">
+                         {{tipo.empleo_tipo}}
+                        </option>
+                      </select>
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon3">Puesto:</span>
+                      <input formControlName="descripcion" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon3">Fecha desde:</span>
+                      <input formControlName="fechaInicio" type="date" name="fecha" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon3">Fecha hasta:</span>
+                      <input formControlName="fechaFin" type="date" name="fecha" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon3">Url Imagen:</span>
+                      <input formControlName="imagen" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+              </div>
+              </div>
+              <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary"data-bs-dismiss="modal">Aceptar</button>
+              </div>
+            </form>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

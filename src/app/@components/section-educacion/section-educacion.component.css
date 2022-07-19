@@ -1,0 +1,53 @@
+.card{
+    background-color:rgb(36, 28,71);
+    margin: auto;
+}
+.contenedor
+{
+  width: 100%;
+  height: auto;
+  display: flex !important;
+  flex-wrap: wrap;
+  margin-left: 4%;
+}
+th{
+    color: #fff;
+}
+.boton {
+    color: black;
+    height: 2.1rem;
+    width: 2.1rem;
+    line-height: 2.1rem;
+    text-align: center;
+    background: white;
+    border-radius: 50%;
+    
+  }
+  .boton:hover {
+    background: rgb(36, 28,71);
+    border: none;
+  }
+  span{
+    background-color: rgb(133, 126, 156);
+    color: #fff;
+  }
+  td{
+    color: #fff;
+  }
+  .caja{
+    height: 200px;
+    width: 180px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
+img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit:cover;
+  }
+  .table-bordered{
+    border:2px solid rgb(112, 152, 124) !important;
+    box-shadow: 0 0 5px #4f9;
+  }

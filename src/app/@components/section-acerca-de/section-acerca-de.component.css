@@ -1,0 +1,25 @@
+  .boton {
+    color: black;
+    display: block;
+    height: 2.4rem;
+    width: 2.4rem;
+    line-height: 2.4rem;
+    text-align: center;
+    background: white;
+    border-radius: 50%;
+
+    
+  }
+  .boton:hover {
+    background: rgb(36, 28,71);
+    border: none;
+  }
+.form{
+    background: rgb(112, 152, 124);
+    color: #fff;
+}
+.container{
+    height: 150px;
+    word-break: break-all;
+}
+

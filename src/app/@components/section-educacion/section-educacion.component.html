@@ -1,0 +1,146 @@
+<div class="container">
+  <div>
+    <h2 class="titulo">Educación</h2>
+  </div>
+  <br>
+  <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2">
+    <div *ngFor="let edu of datatable" >
+      <table>
+        <tbody *ngIf="ulogged!=''" >
+            <td>&nbsp;</td>
+            <th data-bs-toggle="modal" data-bs-target="#modalEduCrear" class="boton"><i class="far fa-plus fa-lg boton text-Success m-1"></i></th>
+            <td>&nbsp;</td>
+            <td (click)="editarEducacion(edu)" data-bs-toggle="modal" data-bs-target="#modalEduCrear" class="boton"><i class="far fa-edit fa-lg boton text-info m-1"></i></td>
+            <td>&nbsp;</td>
+            <td with="20%"></td>
+            <td (click)="onSetData(edu)"class="boton" ><i class="far fa-trash-alt fa-lg boton text-danger m-1"(click)="onDeleteEducacion(edu.id)"></i></td> 
+        </tbody>
+      </table>
+      <br>
+      <div class="card-group" >
+        <div class="card table-bordered" style="max-width: 600px; height: 220px;" >
+        <div class="row g-0">
+          <div class="col caja breakpoint">
+            <img src="{{edu.imagen}}" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8 ">
+            <div class="card-body">
+              <h5 class="card-title">{{edu.escuela}}</h5>
+              <p class="card-text">Titulo:  {{edu.titulo}}</p>
+              <p class="card-text">Nivel:   {{edu.tipo_edu.educacion_tipo}}</p>
+              <p class="card-text">{{edu.inicio| date: 'dd/MM/yyy'}} al {{edu.fin| date: 'dd/MM/yyy'}} </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</div>
+  
+
+  <!-- <div class="api" *ngFor="let edu of datatable" >
+    <table>
+      <tbody *ngIf="ulogged!=''" >
+          <td>&nbsp;</td>
+          <th data-bs-toggle="modal" data-bs-target="#modalEduCrear" class="boton"><i class="far fa-plus fa-lg boton text-Success m-1"></i></th>
+          <td>&nbsp;</td>
+          <td (click)="editarEducacion(edu)" data-bs-toggle="modal" data-bs-target="#modalEduCrear" class="boton"><i class="far fa-edit fa-lg boton text-info m-1"></i></td>
+          <td>&nbsp;</td>
+          <td with="20%"></td>
+          <td (click)="onSetData(edu)"class="boton" ><i class="far fa-trash-alt fa-lg boton text-danger m-1"(click)="onDeleteEducacion(edu.id)"></i></td> 
+      </tbody>
+    </table>
+    <br>
+  <div class="row">
+    <div class="col caja">
+      <img src="{{edu.imagen}}" class="rounded-start" alt="...">
+    </div>
+    <div class="col-lg-7">
+      <div class="card">
+        <div class="card-body">
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <td>Establecimiento:</td>
+                <td>{{edu.escuela}}</td>
+              </tr>
+              <td></td>
+              <tr>
+                <td>Titulo:</td>
+                <td>{{edu.titulo}}</td>
+              </tr>
+              <td></td>
+              <tr>
+                <td>Nivel:</td>
+                <td>{{edu.tipo_edu.educacion_tipo}}</td>
+              </tr>
+              <tr>
+                <td>Fecha de Ingreso:</td>
+                <td>{{edu.inicio| date: 'dd/MM/yyy'}}</td>
+              </tr>
+              <tr>
+                <td>Fecha de Egreso:</td>
+                <td>{{edu.fin| date: 'dd/MM/yyy'}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2" >
+    </div>
+  </div> -->
+<br>
+
+<!-- Modal Crear -->
+
+    <div class="modal fade" id="ModalEduCrear" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+              <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Educacion</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form [formGroup]="form" (ngSubmit)="agregarEducacion()">
+                  <div class="input-group">
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon3">Establecimiento:</span>
+                      <input formControlName="escuela" type="text" class="form-control"  id="basic-url" aria-describedby="basic-addon3" >
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon3">Titulo:</span>
+                      <input formControlName="titulo" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                    </div>
+                    <div class="input-group mb-3" formGroupName="tipo_edu">
+                      <span class="input-group-text" id="basic-addon3">Nivel:</span>
+                      <select class="form-control" aria-label="Default select example"formControlName="id">
+                        <option  *ngFor="let tipo of tipoeducacion" [value]="tipo.id">
+                         {{tipo.educacion_tipo}}
+                        </option>
+                      </select>
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon3">Fecha de Ingreso:</span>
+                      <input formControlName="inicio" type="date" name="fecha" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon3">Fecha de Egreso:</span>
+                      <input formControlName="fin" type="date" name="fecha" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon3">Url Imagen:</span>
+                      <input formControlName="imagen" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+              </div>
+              </div>
+              <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary"data-bs-dismiss="modal">Aceptar</button>
+              </div>
+            </form>
+            </div>
+          </div>
+          </div>
+        </div>
+  <!-- </div>
+</div> -->

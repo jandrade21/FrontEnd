@@ -1,0 +1,79 @@
+<div class="container">
+    <div>
+        <h2 class="titulo">Habilidades</h2>
+    </div>
+        <h3 data-text="Tecnologias....">Tecnologias....</h3>
+    <div class="row row-cols-2 row-cols-md-5 g-4">
+        <div align="left" style="margin-top:3%;" class="col" *ngFor="let tecno of datatecno">
+          <table>
+              <tbody *ngIf="ulogged!=''">
+                  <th>&nbsp;</th>
+                  <th data-bs-toggle="modal"  data-bs-target="#modalTecnoCrear" class="boton"><i class="far fa-plus fa-lg boton text-Success m-1"></i></th>
+                  <th>&nbsp;</th>
+                  <th (click)="editarTecnologia(tecno)"data-bs-toggle="modal"  data-bs-target="#modalTecnoCrear" class="boton"><i class="far fa-edit fa-lg boton text-info m-1"></i></th>
+                  <th>&nbsp;</th>
+                  <th (click)="onSetData(tecno)"class="boton" ><i class="far fa-trash-alt fa-lg boton text-danger m-1"(click)="onDeleteTecnologia(tecno.id)"></i></th>
+              </tbody>
+            </table>
+          <circle-progress
+          [percent]="tecno.porcentaje" 
+          [maxPercent]="100" 
+          [space]="-10" 
+          [radius]="70"
+          subtitle="{{tecno.nombre_tecno}}"
+          subtitleFontSize="17"
+          [outerStrokeWidth]="13"
+          [innerStrokeWidth]="10"
+          [outerStrokeGradient]="true" 
+          [outerStrokeColor]="'#70987c'" 
+          [outerStrokeGradientStopColor]="tecno.color"
+          [innerStrokeColor]="'#e7e8ea'" 
+          [animation]="true"
+          [animationDuration]="1000">
+          </circle-progress>
+ 
+
+
+<!-- Modal Crear -->
+
+    <div class="modal fade" id="modalTecnoCrear" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Tecnologia</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form [formGroup]="form" (ngSubmit)="agregarTecnologia()">
+                    <div class="input-group">
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon3">Nombre de Tecnologia:</span>
+                        <input formControlName="nombre_tecno" type="text" class="form-control"  id="basic-url" aria-describedby="basic-addon3" >
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon3">Porcentaje:</span>
+                        <input formControlName="porcentaje" type="number" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon3">Color del Porcentaje:</span>
+                        <input formControlName="color" type="color" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon3">Url Imagen:</span>
+                        <input formControlName="imagen" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                    </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary"data-bs-dismiss="modal">Aceptar</button>
+                </div>
+              </form>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>   
+      </div>
+</div>
+
+  

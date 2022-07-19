@@ -1,0 +1,46 @@
+h3{
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5vw;
+    color:rgb(123, 126, 156);
+    -webkit-text-stroke: 0.3vw #383d52;
+    text-transform: uppercase;
+
+}
+h3::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:0;
+    height: 100%;
+    color: #44ff99;
+    -webkit-text-stroke: 0vw rgb(123, 126, 156);
+    border-right: 2px solid #44ff99;
+    overflow: hidden;
+    animation: animate 6s linear infinite;
+}
+@keyframes animate{
+    0%,10%,100%
+    {
+        width: 0;
+    }
+    70%,90%
+    {
+        width: 24.2%;
+    }
+}
+.boton {
+    color: black;
+    height: 2.1rem;
+    width: 2.1rem;
+    line-height: 2.1rem;
+    text-align: center;
+    background: white;
+    border-radius: 50%;
+    
+  }
+  .boton:hover {
+    background: rgb(36, 28,71);
+    border: none;
+  }
