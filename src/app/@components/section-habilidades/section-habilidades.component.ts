@@ -93,7 +93,6 @@ export class SectionHabilidadesComponent implements OnInit {
       this.toastr.error('La información laboral se ha eliminado con exito!','Información eliminada');
         this.datatecno(); 
     });
-    window.location.reload();
   }
   onSetData(select:any){
     this.tecnologia.id=select.id;

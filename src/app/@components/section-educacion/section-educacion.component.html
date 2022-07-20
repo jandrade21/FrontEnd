@@ -13,7 +13,7 @@
             <td (click)="editarEducacion(edu)" data-bs-toggle="modal" data-bs-target="#modalEduCrear" class="boton"><i class="far fa-edit fa-lg boton text-info m-1"></i></td>
             <td>&nbsp;</td>
             <td with="20%"></td>
-            <td (click)="onSetData(edu)"class="boton" ><i class="far fa-trash-alt fa-lg boton text-danger m-1"(click)="onDeleteEducacion(edu.id)"></i></td> 
+            <td class="boton" ><i class="far fa-trash-alt fa-lg boton text-danger m-1"(click)="onSetData(edu)"(click)="onDeleteEducacion(edu.id)"></i></td> 
         </tbody>
       </table>
       <br>
