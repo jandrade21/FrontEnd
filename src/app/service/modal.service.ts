@@ -12,7 +12,7 @@ export class ModalService {
 
 
   
-  private url='http://localhost:8080/api/persona'
+  private url='https://jandrade.herokuapp.com/api/persona'
   
 
 

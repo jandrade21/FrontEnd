@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class TecnologiaService {
 
-  private url='http://localhost:8080/api/tecnologia'
+  private url='https://jandrade.herokuapp.com/api/tecnologia'
 
   constructor(private http:HttpClient) { }
 

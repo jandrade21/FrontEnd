@@ -1,0 +1,25 @@
+.boton {
+    color: black;
+    height: 2.1rem;
+    width: 2.1rem;
+    line-height: 2.1rem;
+    text-align: center;
+    background: white;
+    border-radius: 50%;
+    
+  }
+  .boton:hover {
+    background: rgb(36, 28,71);
+    border: none;
+  }
+
+  .border{
+    border:2px solid rgb(112, 152, 124) !important;
+    box-shadow: 0 0 5px #4f9;
+  }
+  a{
+    color: #4f9;
+  }
+  .card{
+    background-color: rgb(36, 28,71);
+  }

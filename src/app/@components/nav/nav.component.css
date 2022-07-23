@@ -48,7 +48,7 @@
   ul li a:hover{
     transition-delay: 0s,0.5s,0.5s;
     top: -10px;
-    color: rgb(112, 152, 124);
+    color: #4f9;
   }
   ul li a:before{
     content:'';
@@ -85,10 +85,10 @@
   }
   .btn{
     background: rgb(112, 152, 124);
-    color: #fff;
+    color: #ffff;
     border:1px solid #fff !important;
     margin: 10px;
   }
   .button{
-    background: rgb(112, 152, 124)
+    background:#4f9;
   }

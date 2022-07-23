@@ -9,8 +9,8 @@ import { tipo_edu } from '../class/tipo_edu';
 })
 export class EducacionService {
 
-  private url='http://localhost:8080/api/educacion'
-  private url2='http://localhost:8080/api/educacion/tipo'
+  private url='https://jandrade.herokuapp.com/api/educacion'
+  private url2='https://jandrade.herokuapp.com/educacion/tipo'
 
 
   constructor(private http: HttpClient) {}

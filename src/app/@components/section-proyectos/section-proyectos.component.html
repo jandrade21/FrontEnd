@@ -1,0 +1,68 @@
+<div class="container">
+      <div>
+        <h2 class="titulo">Proyectos</h2>
+      </div>
+      <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2">
+        <div style="margin-bottom:3%;"*ngFor="let proyec of dataproyec">
+          <table>
+            <tbody *ngIf="ulogged!=''">
+                <td>&nbsp;</td>
+                <th data-bs-toggle="modal" data-bs-target="#modalProyecCrear" class="boton"><i class="far fa-plus fa-lg boton text-Success m-1"></i></th>
+                <td>&nbsp;</td>
+                <td (click)="editarProyecto(proyec)" data-bs-toggle="modal" data-bs-target="#modalProyecCrear" class="boton"><i class="far fa-edit fa-lg boton text-info m-1"></i></td>
+                <td>&nbsp;</td>
+                <td with="20%"></td>
+                <td class="boton" ><i (click)="onSetData(proyec)" (click)="onDeleteProyecto(proyec.id)" class="far fa-trash-alt fa-lg boton text-danger m-1"></i></td> 
+            </tbody>
+          </table>
+        <br>
+        <div class="card mb-3 border">
+          <img src="{{proyec.imagen}}" class="card-img-top" alt="...">
+          <div class="card-body border">
+            <h5 class="card-title">{{proyec.nombre}}</h5>
+            <p class="card-text">{{proyec.descripcion}}</p>
+            <p class="card-text"><small>Code: </small><a href="{{proyec.code}}" target="_blank"><i class="fab fa-github" aria-hidden="true"></i></a></p>
+          </div>
+        </div>
+ 
+<!-- Modal Crear -->
+
+<div class="modal fade" id="modalProyecCrear" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
+     <div class="modal-content">
+             <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalLabel">Proyecto</h5>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             </div>
+             <div class="modal-body">
+               <form [formGroup]="form" (ngSubmit)="agregarProyecto()">
+                 <div class="input-group">
+                   <div class="input-group mb-3">
+                     <span class="input-group-text" id="basic-addon3">Nombre del Proyecto:</span>
+                     <input formControlName="nombre" type="text" class="form-control"  id="basic-url" aria-describedby="basic-addon3" >
+                   </div>
+                   <div class="input-group mb-3">
+                     <span class="input-group-text" id="basic-addon3">Descripción:</span>
+                     <input formControlName="descripcion" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                   </div>
+                   <div class="input-group mb-3">
+                     <span class="input-group-text" id="basic-addon3">code</span>
+                     <input formControlName="code" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                   </div>
+                   <div class="input-group mb-3">
+                     <span class="input-group-text" id="basic-addon3">Url Imagen:</span>
+                     <input formControlName="imagen" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                  </div>
+                 </div>
+                 <div class="modal-footer">
+                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                 <button type="submit" class="btn btn-primary"data-bs-dismiss="modal">Aceptar</button>
+                </div>
+           </form>
+           </div>
+        </div>
+      </div>
+     <div>
+    </div>
+  </div>
+<div>

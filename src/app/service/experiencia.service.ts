@@ -8,7 +8,7 @@ import { Experiencia } from '../class/experiencia';
 })
 export class ExperienciaService {
 
-  private url='http://localhost:8080/api/experiencia'
+  private url='https://jandrade.herokuapp.com/api/experiencia'
 
   constructor(private http:HttpClient) { }
 
