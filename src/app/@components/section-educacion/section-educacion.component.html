@@ -2,9 +2,9 @@
   <div>
     <h2 class="titulo">Educación</h2>
   </div>
-  <br>
   <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2">
     <div *ngFor="let edu of datatable" >
+      <br>
       <table>
         <tbody *ngIf="ulogged!=''" >
             <td>&nbsp;</td>
@@ -18,12 +18,12 @@
       </table>
       <br>
       <div class="card-group" >
-        <div class="card table-bordered" style="max-width: 600px; height: 220px;" >
-        <div class="row g-0">
-          <div class="col caja breakpoint">
-            <img src="{{edu.imagen}}" class="img-fluid rounded-start" alt="...">
+        <div class="card table-bordered"  >
+        <div class="row g-4">
+          <div class="col-md-4">
+            <img src="{{edu.imagen}}" class="img-fluid  mx-auto d-block" alt="...">
           </div>
-          <div class="col-md-8 ">
+          <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title">{{edu.escuela}}</h5>
               <p class="card-text">Titulo:  {{edu.titulo}}</p>

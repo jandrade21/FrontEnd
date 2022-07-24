@@ -19,6 +19,7 @@ import { SectionEducacionComponent } from './@components/section-educacion/secti
 import { ToastrModule } from 'ngx-toastr';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { SectionHabilidadesComponent } from './@components/section-habilidades/section-habilidades.component';
+import { SectionFooterComponent } from './@components/section-footer/section-footer.component';
 
 
 
@@ -38,6 +39,7 @@ import { SectionHabilidadesComponent } from './@components/section-habilidades/s
     BannerComponent,
     SectionEducacionComponent,
     SectionHabilidadesComponent,
+    SectionFooterComponent,
 
   ],
   imports: [

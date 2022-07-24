@@ -27,7 +27,6 @@ export class SectionHabilidadesComponent implements OnInit {
         id:[''],
         nombre_tecno: [''],
         porcentaje: [0],
-        imagen:[''],
         color:[''],
         })
      }
@@ -49,7 +48,6 @@ export class SectionHabilidadesComponent implements OnInit {
       id: 0,
       nombre_tecno: this.form.get('nombre_tecno')?.value,
       porcentaje: this.form.get('porcentaje')?.value,
-      imagen: this.form.get('imagen')?.value, 
       color:this.form.get('color')?.value,
     }
       if(this.id==undefined){
@@ -84,7 +82,6 @@ export class SectionHabilidadesComponent implements OnInit {
     this.form.patchValue({
           nombre_tecno:tecnologia.nombre_tecno,
           porcentaje:tecnologia.porcenjate,
-          imagen:tecnologia.imagen,
           color:tecnologia.color,
         })
 }
@@ -98,7 +95,6 @@ export class SectionHabilidadesComponent implements OnInit {
     this.tecnologia.id=select.id;
     this.tecnologia.nombre_tecno=select.nombre_tecno;
     this.tecnologia.porcentaje=select.porcentaje;
-    this.tecnologia.imagen=select.imagen;
     this.tecnologia.color=select.color
   }
 }

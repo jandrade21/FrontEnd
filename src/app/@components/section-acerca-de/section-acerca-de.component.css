@@ -19,7 +19,9 @@
     color: #fff;
 }
 .container{
-    height: 150px;
-    word-break: break-all;
+    height: auto;
+    padding: 10px
 }
-
+p{
+  word-wrap: break-word ;
+}

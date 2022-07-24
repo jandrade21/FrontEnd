@@ -1,10 +1,10 @@
 h3{
     position: relative;
     font-family: 'Poppins', sans-serif;
-    font-size: 2.5vw;
     color:rgb(123, 126, 156);
     -webkit-text-stroke: 0.3vw #383d52;
     text-transform: uppercase;
+    font-size:2.5vmax;
 
 }
 h3::before{
@@ -27,7 +27,7 @@ h3::before{
     }
     70%,90%
     {
-        width: 24.2%;
+        width: 45%;
     }
 }
 .boton {

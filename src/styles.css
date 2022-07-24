@@ -27,7 +27,7 @@
     position: absolute;
     bottom: 0;
     animation:  burbujas 3s linear infinite;
-    z-index: 3;
+    z-index: 1000;
   }
   .burbuja:nth-child(1){
     min-width: 10px;
@@ -97,6 +97,7 @@
     }
   }
   .container { 
+  
     background:#e5e5e5; margin:2em auto; 
     border-radius: 5em auto !important;
     border:2px solid rgb(112, 152, 124) !important;

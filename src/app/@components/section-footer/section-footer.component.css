@@ -1,16 +1,24 @@
+.nav {
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding:0.5;
+    display:flex;
+    flex-direction: row;
+    /* flex-wrap: nowrap; */
+    justify-content: space-between;
+    align-items:center;
+    width:100%;
+    margin:0;
+    padding:0 2%;
+}
+
 .container-fluid{
 
+    height: 110px;
     background-color: rgb(36,28,71);
     border-bottom: rgb(112, 152, 124) 1px solid;
     box-shadow: 0 0 5px #4f9;
-  }
-  #mainNav{
-    background-color:#838B8E;
-    height:110px;
-    padding: 0;
-    margin: 0;
-    left: 0;
-    z-index: 100;
   }
   ul{
     position:relative;
@@ -20,18 +28,18 @@
     position: relative;
     list-style: none;
     margin: 0;
-    padding: 10px;
+    padding: 3px;
     
   }
   ul li a{
     position: relative;
     top:0;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     display: flex;
     justify-content: center;
     color: #fff;
-    font-size: 1.5em;
+    font-size: 1.2em;
     border: 1px solid rgba(255,255,255,0.4);
     border-right: 1px solid rgba(255,255,255,0.2);
     border-bottom: 1px solid rgba(255,255,255,0.2);
@@ -63,32 +71,4 @@
   }
   ul li a:hover:before{
     transform: skewX(45deg) translateX(-150px);
-  }
-  img {
-    width: 200px;
-    padding: 20px 30px;
-  
-  } 
-  .navbar-toggler{
-    right: 10px;
-    left: 40px;
-    margin: 40px;
-  }
-  h6{
-    font-size: 15px;
-    height: 10px;
-    color: #fff;
-  
-  }
-  @media (max-width: 400px) {
-    h6 { font-size: 0.7em; }
-  }
-  .btn{
-    background: rgb(112, 152, 124);
-    color: #ffff;
-    border:1px solid #fff !important;
-    margin: 10px;
-  }
-  .boton{
-    background:#4f9;
   }
