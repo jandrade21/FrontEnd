@@ -5,26 +5,7 @@
   margin-top: -110px;
   z-index: 10;
 }
-div#info-actions {
-  display: flex;
-}
-div#info-actions button {
-  margin-right: 8px;
-}
-div#info-contact span {
-  font-size: 1rem;
-  font-weight: 400;
-}
-div#info-contact span a {
-  color: #0a66c2;
-  touch-action: manipulation;
-  text-decoration: none;
-}
-div#info-company {
-  font-size: 1.2rem;
-  font-weight: 400;
-  line-height: 1.25;
-}
+
 #info-data {
   display: flex;
   justify-content: space-between;
@@ -46,58 +27,6 @@ div#info-data ul#info-details li a h2 {
   font-weight: 500;
   align-self: center;
   vertical-align: baseline;
-}
-div#info-data ul#info-details li a img {
-  width: 32px;
-  height: 32px;
-  margin-right: 8px;
-}
-ul.items-list {
-  list-style: none inside;
-}
-ul.items-list li {
-  display: flex;
-  margin: 10px 0;
-}
-ul.items-list li div.data-container {
-  flex-grow: 1;
-}
-ul.items-list li div.data-container a {
-  display: flex;
-  color: black;
-  text-decoration: none;
-}
-ul.items-list li div.data-container a div.logo-image-container {
-  margin: 10px 0;
-}
-ul.items-list li div.data-container a div.logo-image-container img.logo-image {
-  height: 60px;
-  width: 60px;
-}
-ul.items-list li div.data-container a div.list-info {
-  margin: 0 10px;
-}
-ul.items-list li div.data-container a div.list-info h3 {
-  color: black;
-  margin: 10px;
-}
-ul.items-list li div.data-container a div.list-info h4, ul.items-list li div.data-container a div.list-info time {
-  color: gray;
-  margin: 0 5px;
-}
-ul.items-list li div.data-container a div.list-info p {
-  color: black;
-  margin: 0 5px;
-}
-ol.items-list {
-  list-style: none inside;
-}
-ol.items-list li div.aptitude-info a {
-  text-decoration: none;
-  color: grey;
-}
-ol.items-list li div.aptitude-info a span {
-  color: black;
 }
 
 #info{
@@ -135,8 +64,7 @@ div#profile-background .banner{
   z-index: 1;
   margin-top: 6%;
   margin-left: 5%;
-  /* margin-top: 7rem;
-  margin-left: 3rem; */
+
 } 
 .carousel{
   height: 120px;
@@ -156,4 +84,23 @@ div#profile-background .banner{
 }
 .container{
   padding: 0%;
+}
+.mover{
+  text-align: end !important;
+}
+.boton {
+  color: black;
+  display:inline-table;
+  height: 2.4rem;
+  width: 2.4rem;
+  line-height: 2.4rem;
+  text-align: center;
+  background: white;
+  border-radius: 50%;
+
+  
+}
+.boton:hover {
+  background: rgb(36, 28,71);
+  border: none;
 }

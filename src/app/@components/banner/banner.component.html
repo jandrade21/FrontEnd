@@ -12,30 +12,23 @@
       </div>
         <img src="assets/img/BANNER-FONDO.png" class="banner" alt="...">
     </div>
-    <div id="info" style="padding: 16px">
+    <div id="info" style="padding: 16px" *ngFor="let info of datatable">
       <div id="info-img">
-        <img id="info-user-img " class="foto d-none d-sm-inline" src="assets/img/foto.jpg">
-        <!-- <div class="btn-edit" *ngIf="ulogged!=''"><a href="#" class="btn-right"><i class="fa fa-pen" onclick="showEditProfileModal()"></i></a></div> -->
+        <img id="info-user-img " class="foto d-none d-sm-inline" src="{{info.url_img}}">
       </div>
       <div id="info-data">
         <div>
-          <h3 id="info-name" class="item1">
-          </h3>
-          <div class="item4"><span id="info-position">Supervisor</span> en <span id="info-company">Municipalidad de la Plata</span></div>
-          <div id="info-contact" class="item4">
-            <span id="info-ubication">La Plata - Buenos Aires (Argentina) </span>
+          <h3 id="info-name" class="item1">{{info.apellido}} {{info.nombre}}</h3>
+          <div class="item4">
+            <span id="info-company">{{info.experiencia.empresa}}</span>
+          </div>
+          <div class="item4">
+            <span id="info-position">{{info.experiencia.tipo_empleo.empleo_tipo}}</span> en <span id="info-company">{{info.experiencia.descripcion}}</span>
+          </div>
+          <div class="item4">
+            <span id="info-ubication">{{info.domicilio}}</span>
           </div>
         </div>
-        <ul id="info-details">
-          <li><a href="#">
-            <!-- <img id="info-company-img" src=""> -->
-            <h2 id="info-company-name">Municipalidad de La Plata</h2>
-          </a></li>
-          <li><a href="#">
-            <!-- <img id="info-school-img"src=""> -->
-            <h2 id="info-school-name">Universidad Nacional de La Plata</h2>
-          </a></li>
-        </ul>
       </div>
     </div>
 </div>
