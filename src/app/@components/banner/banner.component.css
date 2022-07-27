@@ -85,22 +85,3 @@ div#profile-background .banner{
 .container{
   padding: 0%;
 }
-.mover{
-  text-align: end !important;
-}
-.boton {
-  color: black;
-  display:inline-table;
-  height: 2.4rem;
-  width: 2.4rem;
-  line-height: 2.4rem;
-  text-align: center;
-  background: white;
-  border-radius: 50%;
-
-  
-}
-.boton:hover {
-  background: rgb(36, 28,71);
-  border: none;
-}

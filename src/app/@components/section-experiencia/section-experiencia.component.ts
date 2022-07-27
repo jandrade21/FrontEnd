@@ -72,25 +72,21 @@ export class SectionExperienciaComponent implements OnInit {
     if(this.id==undefined){
       //Agregar nueva experiencia
       this.experienciaService.addExperiencia(experiencia).subscribe(res =>{
-        if(res){
-          this.toastr.success('La información personal se ha registrado con exito', 'Información registrada!');
-          this.dataexp();
+          this.toastr.success('La información laboral se ha registrado con exito', 'Información registrada!');
+          this.verExperiencia();
           this.form.reset();
-        }
-        window.location.reload();
       })
     }
     else{
       //Editar Educación
       experiencia.id=this.id;
       this.experienciaService.updateExperiencia(experiencia).subscribe(res=>{
-        this.form.reset();
         this.accion='Agregar'
         this.id==undefined;
-        this.toastr.success('La información personal se ha registrado con exito', 'Información registrada!');
-        this.dataexp;
+        this.toastr.success('La información laboral se ha editado con exito', 'Información registrada!');
+        this.verExperiencia();
+        this.form.reset();
       })
-      window.location.reload();
     }
   }
 
@@ -118,10 +114,11 @@ export class SectionExperienciaComponent implements OnInit {
 }
   onDeleteExperiencia(id:number):void{
     this.experienciaService.deleteExperiencia(id).subscribe(res =>{
-      this.toastr.error('La información laboral se ha eliminado con exito!','Información eliminada');
-        this.dataexp(); 
+        this.toastr.error('La información laboral se ha eliminado con exito!','Información eliminada');
+        this.verExperiencia();
+        this.form.reset();
     });
-    window.location.reload();
+
   }
   onSetData(select:any){
     this.experiencia.id=select.id;
@@ -131,7 +128,7 @@ export class SectionExperienciaComponent implements OnInit {
     this.experiencia.FechaFin=select.fechaFin;
     this.experiencia.descripcion=select.descripcion;
     this.experiencia.imagen=select.imagen;
-    this.experiencia.empleo_tipo=select.empleo_tipo;
+    this.tipo_empleo.empleo_tipo=select.empleo_tipo;
   }
 
 }

@@ -54,25 +54,21 @@ export class SectionProyectosComponent implements OnInit {
       if(this.id==undefined){
         //Agregar nueva experiencia
         this.proyectoService.addProyecto(proyecto).subscribe(res =>{
-          if(res){
-            this.toastr.success('La información personal se ha registrado con exito', 'Información registrada!');
-            this.dataproyec();
+            this.toastr.success('El proyecto se ha registrado con exito', 'Información registrada!');
+            this.verProyecto();
             this.form.reset();
-          }
-          window.location.reload();
         })  
     }
     else{
       //Editar Educación
       proyecto.id=this.id;
       this.proyectoService.updateProyecto(proyecto).subscribe(res=>{
-        this.form.reset();
         this.accion='Agregar'
         this.id==undefined;
-        this.toastr.success('La información personal se ha registrado con exito', 'Información registrada!');
-        this.dataproyec;
+        this.toastr.success('El proyecto se ha editado con exito', 'Información registrada!');
+        this.verProyecto;
+        this.form.reset();
       })
-      window.location.reload();
     }
   }
   editarProyecto(proyecto:any){
@@ -89,8 +85,9 @@ export class SectionProyectosComponent implements OnInit {
 }
   onDeleteProyecto(id:number):void{
     this.proyectoService.deleteProyecto(id).subscribe(res =>{
-      this.toastr.error('La información laboral se ha eliminado con exito!','Información eliminada');
-        this.dataproyec(); 
+        this.toastr.error('El proyecto se ha eliminado con exito!','Información eliminada');
+        this.verProyecto();
+        this.form.reset();
     });
   }
   onSetData(select:any){

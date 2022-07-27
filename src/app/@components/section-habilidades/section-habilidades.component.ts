@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
+import { compileDeclarePipeFromMetadata } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Tecnologia } from 'src/app/class/tecnologia';
@@ -21,7 +22,7 @@ export class SectionHabilidadesComponent implements OnInit {
   accion:string="agregar";
   id:number|undefined;
 
-  constructor(private tecnologiaService:TecnologiaService, private roter:Router,private http:HttpClient,private LoginService:LoginService,
+  constructor(private tecnologiaService:TecnologiaService, private router:Router,private http:HttpClient,private LoginService:LoginService,
     private toastr:ToastrService, private formBuilder:FormBuilder) {
       this.form=this.formBuilder.group({
         id:[''],
@@ -51,27 +52,24 @@ export class SectionHabilidadesComponent implements OnInit {
       color:this.form.get('color')?.value,
     }
       if(this.id==undefined){
-        //Agregar nueva experiencia
-        this.tecnologiaService.addTecnologia(tecnologia).subscribe(res =>{
-          if(res){
-            this.toastr.success('La información personal se ha registrado con exito', 'Información registrada!');
-            this.datatecno();
+        //Agregar nueva Tecnologia
+        this.tecnologiaService.addTecnologia(tecnologia).subscribe(res=>{
+            this.toastr.success('La tecnología se ha registrado con exito', 'Información registrada!');
+            this.verTecnologia();
             this.form.reset();
-          }
-          window.location.reload();
         })  
     }
     else{
-      //Editar Educación
+      //Editar Tecnologia
       tecnologia.id=this.id;
       this.tecnologiaService.updateTecnologia(tecnologia).subscribe(res=>{
         this.form.reset();
         this.accion='Agregar'
         this.id==undefined;
-        this.toastr.success('La información personal se ha registrado con exito', 'Información registrada!');
-        this.datatecno;
+        this.toastr.success('La tecnología se ha editado con exito', 'Información registrada!');
+        this.verTecnologia();
+        this.form.reset();
       })
-      window.location.reload();
     }
   }
   editarTecnologia(tecnologia:any){
@@ -87,8 +85,9 @@ export class SectionHabilidadesComponent implements OnInit {
 }
   onDeleteTecnologia(id:number):void{
     this.tecnologiaService.deleteTecnologia(id).subscribe(res =>{
-      this.toastr.error('La información laboral se ha eliminado con exito!','Información eliminada');
-        this.datatecno(); 
+      this.toastr.error('La información tecnologica se ha eliminado con exito!','Información eliminada');
+        this.verTecnologia();
+        this.form.reset();
     });
   }
   onSetData(select:any){
@@ -97,4 +96,6 @@ export class SectionHabilidadesComponent implements OnInit {
     this.tecnologia.porcentaje=select.porcentaje;
     this.tecnologia.color=select.color
   }
+
+
 }

@@ -12,7 +12,7 @@
                   <th>&nbsp;</th>
                   <th (click)="editarTecnologia(tecno)"data-bs-toggle="modal"  data-bs-target="#modalTecnoCrear" class="boton"><i class="far fa-edit fa-lg boton text-info m-1"></i></th>
                   <th>&nbsp;</th>
-                  <th (click)="onSetData(tecno)"class="boton" ><i class="far fa-trash-alt fa-lg boton text-danger m-1"(click)="onDeleteTecnologia(tecno.id)"></i></th>
+                  <th class="boton" ><i class="far fa-trash-alt fa-lg boton text-danger m-1"(click)="onSetData(tecno)"(click)="onDeleteTecnologia(tecno.id)"></i></th>
               </tbody>
             </table>
           <circle-progress

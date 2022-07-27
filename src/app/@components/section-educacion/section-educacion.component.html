@@ -8,9 +8,9 @@
       <table>
         <tbody *ngIf="ulogged!=''" >
             <td>&nbsp;</td>
-            <th data-bs-toggle="modal" data-bs-target="#modalEduCrear" class="boton"><i class="far fa-plus fa-lg boton text-Success m-1"></i></th>
+            <th data-bs-toggle="modal" data-bs-target="#modalEduCrear" class="boton"><i class="far fa-plus fa-lg boton text-Success m-1" (click)="onSetData(edu)"></i></th>
             <td>&nbsp;</td>
-            <td (click)="editarEducacion(edu)" data-bs-toggle="modal" data-bs-target="#modalEduCrear" class="boton"><i class="far fa-edit fa-lg boton text-info m-1"></i></td>
+            <td data-bs-toggle="modal" data-bs-target="#modalEduCrear" class="boton"><i (click)="editarEducacion(edu)"class="far fa-edit fa-lg boton text-info m-1"(click)="onSetData(edu)"></i></td>
             <td>&nbsp;</td>
             <td with="20%"></td>
             <td class="boton" ><i class="far fa-trash-alt fa-lg boton text-danger m-1"(click)="onSetData(edu)"(click)="onDeleteEducacion(edu.id)"></i></td> 

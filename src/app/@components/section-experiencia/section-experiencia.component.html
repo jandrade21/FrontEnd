@@ -11,7 +11,7 @@
                   <th>&nbsp;</th>
                   <th (click)="editarExperiencia(exp)"data-bs-toggle="modal"  data-bs-target="#modalExpCrear" class="boton"><i class="far fa-edit fa-lg boton text-info m-1"></i></th>
                   <th>&nbsp;</th>
-                  <th (click)="onSetData(exp)"class="boton" ><i class="far fa-trash-alt fa-lg boton text-danger m-1"(click)="onDeleteExperiencia(exp.id)"></i></th>
+                  <th class="boton" ><i class="far fa-trash-alt fa-lg boton text-danger m-1"(click)="onSetData(exp)"(click)="onDeleteExperiencia(exp.id)"></i></th>
               </tbody>
             </table>
             <br>

@@ -11,13 +11,11 @@ import { Persona } from 'src/app/class/persona';
   styleUrls: ['./banner.component.css']
 })
 export class BannerComponent implements OnInit {
-
   persona: Persona = new Persona;
   datatable:any=[];
   ulogged: string =""
   constructor(private LoginService:LoginService, private router:Router,
     private modalservice:ModalService) {
-  
      }
 
   ngOnInit(): void {
@@ -31,5 +29,6 @@ export class BannerComponent implements OnInit {
       console.log(res);
     });
   }
+
       
 }

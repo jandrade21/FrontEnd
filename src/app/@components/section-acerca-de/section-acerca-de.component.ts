@@ -65,6 +65,7 @@ export class SectionAcercaDeComponent implements OnInit {
     this.persona.correo=select.correo;
     this.persona.sobre_mi = select.sobre_mi;
     this.persona.url_img=select.url_img;
+    this.persona.domicilio=select.domicilio;
 
   }
   

@@ -70,25 +70,24 @@ export class SectionEducacionComponent implements OnInit {
     if(this.id==undefined){
       //Agregar nueva Educación
       this.educacionService.addEducacion(educacion).subscribe(res =>{
-        if(res){
-          this.toastr.success('La información personal se ha registrado con exito', 'Información registrada!');
+          this.form.reset();
+          this.toastr.success('La información académica se ha registrado con exito', 'Información registrada!');
           this.onDateTable();
           this.form.reset();
-        }
-        window.location.reload();
+          
       })
     }
     else{
       //Editar Educación
       educacion.id=this.id;
       this.educacionService.updateEducacion(educacion).subscribe(res=>{
-        this.form.reset();
         this.accion='Agregar'
         this.id==undefined;
-        this.toastr.success('La información personal se ha registrado con exito', 'Información registrada!');
-        this.onDateTable;
+        this.toastr.success('La información académica se ha editado con exito', 'Información registrada!');
+        this.onDateTable();
+        this.form.reset();
       })
-      window.location.reload();
+     
     }
   
    }
@@ -121,7 +120,6 @@ onDeleteEducacion(id:number):void{
     this.toastr.error('La información academica se ha eliminado con exito!','Información eliminada');
       this.onDateTable();
       this.router.navigate(['portfolio'])
-
   });
 }
 

@@ -1,3 +1,4 @@
+
 export class Persona {
         id:        number=0;
         nombre:    string='';
@@ -7,6 +8,7 @@ export class Persona {
         correo:    string='';
         sobre_mi:  string='';
         url_img:   string='';
+        domicilio: string='';
 
 }
     
